@@ -1,5 +1,5 @@
 const scoreSystem = (() => {
-  const key = 'rtskQXlUNmHXvSs1xxhh'
+  const key = 'C4WZklBgOz9HR7DdiA4L'
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`
   const info = {};
   const postScores = () => {
@@ -19,6 +19,7 @@ const scoreSystem = (() => {
   const namer = (name) => {
     info.user = name
   }
+
   const scorer = (num) => {
     info.score = num
   }

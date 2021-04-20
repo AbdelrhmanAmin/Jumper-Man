@@ -145,8 +145,6 @@ export default class GameScene extends Phaser.Scene {
     createBoyAnims(this.anims)
     createCoinAnims(this.anims)
     this.game.sound.stopAll()
-    let music = this.sound.add('gameMusic');
-    // music.play({ loop: true })
     let bg = this.add.image(0, 0, 'sky').setScrollFactor(0)
     this.createParallax(this, 3, 'mountain-far', 0.25, 2.5)
     this.createParallax(this, 3, 'mountains', 0.5, (2, 1.5))
@@ -230,7 +228,7 @@ export default class GameScene extends Phaser.Scene {
       scoreSystem.scorer(this.score);
       scoreSystem.postScores()
       this.score = 0;
-      this.scene.start("Score");
+      this.scene.start("Title");
     }
     this.player.x = gameOptions.playerStartPosition;
     // recycling platforms

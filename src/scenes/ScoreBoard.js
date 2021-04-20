@@ -6,12 +6,38 @@ export default class ScoreScene extends Phaser.Scene {
     super('Score');
   }
   create() {
-    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/rtskQXlUNmHXvSs1xxhh/scores/')
+    const catbg = this.add.image(0, 0, 'scorebg')
+    Align.scaleToGameW(catbg, 1.5, this)
+    Align.center(catbg, this)
+    const board = document.getElementById('score');
+    board.style.display = 'flex';
+    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/C4WZklBgOz9HR7DdiA4L/scores/')
       .then(res => res.json())
       .then(res => {
-        res.result.forEach((user) => {
-          console.log(user)
-        })
+        const arr = res.result;
+        for (let i = 0; i < arr.length; i += 1) {
+          for (let j = 0; j < arr.length - 1; j += 1) {
+            if (arr[j].score < arr[j + 1].score) {
+              const tmp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = tmp;
+            }
+          }
+        }
+        arr.slice(0, 5).forEach((item, i) => {
+          const div = document.createElement('div');
+          div.style.cssText = `
+          display:flex;
+          justify-content: space-between
+          `
+          const nameDiv = document.createElement('strong');
+          const scoreDiv = document.createElement('strong');
+          nameDiv.innerHTML = `${item.user} `;
+          scoreDiv.innerHTML = `${item.score}`;
+          div.appendChild(nameDiv);
+          div.appendChild(scoreDiv);
+          board.appendChild(div)
+        });
       })
   }
 };

@@ -79,6 +79,7 @@ export default class PreloaderScene extends Phaser.Scene {
     // load assets needed in our game
     this.load.image('platform', 'assets/stone.png');
     this.load.image('catbg', 'assets/catbg.png');
+    this.load.image('scorebg', 'assets/scorebg.jpg');
     this.load.image('spikes', 'assets/spikes.png');
     this.load.image('sky', 'assets/layers/parallax-mountain-bg.png');
     this.load.image('mountain-far', 'assets/layers/parallax-mountain-montain-far.png');
