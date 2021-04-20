@@ -88,6 +88,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('btn-hover', 'assets/buttons/button-hovered.png');
     this.load.image('btn1', 'assets/buttons/b1.png');
     this.load.image('btn2', 'assets/buttons/b2.png');
+    this.load.image('spacebar', 'assets/buttons/spacebar.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['assets/Sounds/lobby.mp3']);

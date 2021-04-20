@@ -113,7 +113,44 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
+  welcome() {
+    this.space1.destroy();
+    this.space2.destroy();
+    this.space3.destroy();
+    this.text1.destroy();
+    this.text2.destroy();
+    this.text3.destroy();
+    this.player.setGravityY(900);
+    this.addPlatform(this.sys.scale.width, this.sys.scale.width / 2,
+      this.sys.scale.height * gameOptions.platformVerticalLimit[1]);
+  }
+
+  preload() {
+    this.time.addEvent({
+      delay: 2000,
+      callback: this.welcome,
+      callbackScope: this,
+      loop: false,
+    });
+  }
+
   create() {
+    this.space1 = this.add.image(380, 169, 'spacebar').setDepth(5).setScale(0.5);
+    this.text1 = this.add.text(100, 150, 'To jump, Press:', {
+      fontSize: '24px',
+      fill: '#000',
+    }).setDepth(5);
+    this.text2 = this.add.text(100, 250, 'To Double jump, Press:', {
+      fontSize: '24px',
+      fill: '#000',
+    }).setDepth(5);
+    this.space2 = this.add.image(380, 320, 'spacebar').setDepth(5).setScale(0.5);
+    this.text3 = this.add.text(275, 300, '+', {
+      fontSize: '50px',
+      fill: '#000',
+    }).setDepth(5);
+    this.space3 = this.add.image(200, 320, 'spacebar').setDepth(5).setScale(0.5);
+
     this.score = 0;
     this.scoreText = this.add.text(100, 70, 'Score: 0', {
       fontSize: '32px',
@@ -161,9 +198,7 @@ export default class GameScene extends Phaser.Scene {
     });
     this.addedPlatforms = 0;
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, this.sys.scale.height * 0.7, 'boy');
-    this.player.setGravityY(900);
-    this.addPlatform(this.sys.scale.width, this.sys.scale.width / 2,
-      this.sys.scale.height * gameOptions.platformVerticalLimit[1]);
+    this.physics.add.collider(this.player, this.platform, () => { }, null, this);
     this.platformCollider = this.physics.add.collider(this.player, this.platformGroup, function () {
       if (!this.player.anims.isPlaying) {
         this.player.anims.play('walk');
