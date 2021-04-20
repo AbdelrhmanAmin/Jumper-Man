@@ -45,6 +45,13 @@ The cute boy can jump once and twice only in midst of air defying rules of physi
     code .
 ```
 
+3- install Packages
+
+```
+    npm install
+
+```
+
 3- Right click the dist/index.html file and click on "Open With Live Server"
 
 4- Everything should be running by now.
@@ -55,6 +62,14 @@ The cute boy can jump once and twice only in midst of air defying rules of physi
 
 ```
     npm run webpack
+```
+
+### Testing
+
+Run the next on your terminal in the repository folder:
+
+```
+    npm run test
 ```
 
 ## Author
