@@ -1,0 +1,31 @@
+{
+  "name": "jumper",
+  "version": "1.0.0",
+  "description": "A man who does apparently...Jump.",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --watch",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdelrhmanAmin/Jumper-Man.git"
+  },
+  "author": "Abdo Amin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdelrhmanAmin/Jumper-Man/issues"
+  },
+  "homepage": "https://github.com/AbdelrhmanAmin/Jumper-Man#readme",
+  "devDependencies": {
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "phaser": "^3.54.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
