@@ -51,7 +51,6 @@ export default class PreloaderScene extends Phaser.Scene {
     });
     assetText.setOrigin(0.5, 0.5);
 
-    // update progress bar
     this.load.on('progress', function (value) {
       percentText.setText(parseInt(value * 100) + '%');
       progressBar.clear();
@@ -59,12 +58,10 @@ export default class PreloaderScene extends Phaser.Scene {
       progressBar.fillRect(250, 280, 300 * value, 30);
     });
 
-    // update file progress text
     this.load.on('fileprogress', function (file) {
       assetText.setText('Loading asset: ' + file.key);
     });
 
-    // remove progress bar when complete
     this.load.on('complete', function () {
       progressBar.destroy();
       progressBox.destroy();
@@ -76,7 +73,6 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    // load assets needed in our game
     this.load.image('platform', 'assets/stone.png');
     this.load.image('catbg', 'assets/catbg.png');
     this.load.image('scorebg', 'assets/scorebg.jpg');

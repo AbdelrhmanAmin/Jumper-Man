@@ -5,6 +5,8 @@ export default class TitleScene extends Phaser.Scene {
     super('Title');
   }
   create() {
+    const board = document.getElementById('score');
+    board.style.display = 'none';
     this.sound.pauseOnBlur = false
     this.model = this.sys.game.globals.model;
     if (this.model.soundOn === true && this.model.bgMusicPlaying === false) {

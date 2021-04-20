@@ -12,6 +12,7 @@ export default class ScoreScene extends Phaser.Scene {
     Align.center(catbg, this)
     const board = document.getElementById('score');
     board.style.display = 'flex';
+    board.innerHTML = ''
     fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/C4WZklBgOz9HR7DdiA4L/scores/')
       .then(res => res.json())
       .then(res => {

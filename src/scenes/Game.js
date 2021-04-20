@@ -4,46 +4,17 @@ import scoreSystem from '../score/API';
 import { createBoyAnims } from '../anims/Boy'
 import { createCoinAnims } from '../anims/Coin'
 let gameOptions = {
-  // platform speed range, in pixels per second
   platformSpeedRange: [300, 300],
-
-  // mountain speed, in pixels per second
-  mountainSpeed: 80,
-
-  // spawn range, how far should be the rightmost platform from the right edge
-  // before next platform spawns, in pixels
   spawnRange: [80, 300],
-
-  // platform width range, in pixels
   platformSizeRange: [120, 300],
-
-  // a height range between rightmost platform and next platform to be spawned
   platformHeightRange: [-5, 5],
-
-  // a scale to be multiplied by platformHeightRange
   platformHeighScale: 20,
-
-  // platform max and min height, as screen height ratio
   platformVerticalLimit: [0.4, 0.8],
-
-  // player gravity
   playerGravity: 900,
-
-  // player jump force
   jumpForce: 400,
-
-  // player starting X position
   playerStartPosition: 150,
-
-  // consecutive jumps allowed
   jumps: 2,
-
-  // % of probability a coin appears on the platform
-
-  // % of probability a coin appears on the platform
   coinPercent: 75,
-
-  // % of probability a fire appears on the platform
   spikePercent: 50
 };
 export default class GameScene extends Phaser.Scene {
@@ -162,33 +133,21 @@ export default class GameScene extends Phaser.Scene {
       },
     });
     this.spikeGroup = this.add.group({
-
-      // once a firecamp is removed, it's added to the pool
       removeCallback: function (spike) {
         spike.scene.spikePool.add(spike)
       }
     });
-
-    // fire pool
     this.spikePool = this.add.group({
-
-      // once a fire is removed from the pool, it's added to the active fire group
       removeCallback: function (spike) {
         spike.scene.spikeGroup.add(spike)
       }
     });
     this.coinGroup = this.add.group({
-
-      // once a coin is removed, it's added to the pool
       removeCallback: function (coin) {
         coin.scene.coinPool.add(coin)
       }
     });
-
-    // coin pool
     this.coinPool = this.add.group({
-
-      // once a coin is removed from the pool, it's added to the active coins group
       removeCallback: function (coin) {
         coin.scene.coinGroup.add(coin)
       }
@@ -231,8 +190,7 @@ export default class GameScene extends Phaser.Scene {
       this.scene.start("Title");
     }
     this.player.x = gameOptions.playerStartPosition;
-    // recycling platforms
-    // recycling platforms
+
     let minDistance = this.sys.scale.width;
     let rightmostPlatformHeight = 0;
     this.platformGroup.getChildren().forEach(function (platform) {
@@ -253,7 +211,6 @@ export default class GameScene extends Phaser.Scene {
         this.spikeGroup.remove(spike);
       }
     }, this);
-    // recycling coins
     this.coinGroup.getChildren().forEach(function (coin) {
       if (coin.x < - coin.displayWidth / 2) {
         this.coinGroup.killAndHide(coin);
