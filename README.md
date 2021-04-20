@@ -2,6 +2,8 @@
 
 > It's a 2d game with a cute boy who set himself out for an endless adventure to jump collect coins and avoid traps on speeding various platforms
 
+![screenshot](./img.png)
+
 ## Built With
 
 - HTML
