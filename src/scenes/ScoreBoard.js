@@ -39,5 +39,6 @@ export default class ScoreScene extends Phaser.Scene {
           board.appendChild(div)
         });
       })
+    this.menuButton = new Button(this, 400, 500, 'btn-default', 'btn-hover', 'Menu', 'Title');
   }
 };
