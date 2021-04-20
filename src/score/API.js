@@ -12,13 +12,8 @@ const scoreSystem = (() => {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      res.json()
-    }).then((json) => {
-      resolve(json.result);
-    })
-      .catch((err) => {
-        reject(err);
-      });
+      res.json();
+    }).then((json) => json.result);
   };
   const namer = (name) => {
     info.user = name;
@@ -29,12 +24,12 @@ const scoreSystem = (() => {
   };
   const getScores = () => new Promise((resolve, reject) => {
     fetch(url)
-      .then(response => response.json()
-        .then((json) => {
-          resolve(json.result);
-        })).catch((e) => {
-          reject(e);
-        });
+      .then((response) => response.json())
+      .then((json) => {
+        resolve(json.result);
+      }).catch((e) => {
+        reject(e);
+      });
   });
   return {
     postScores,

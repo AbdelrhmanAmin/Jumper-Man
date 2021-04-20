@@ -5,7 +5,6 @@ beforeEach(() => {
   fetch.resetMocks();
 });
 
-
 it('Return score', async () => {
   fetch.mockResponseOnce(JSON.stringify({
     result: [
@@ -56,4 +55,3 @@ it('fails due to incorrect username', async () => {
   expect(res[0].user).not.toEqual('Neko Master');
   expect(fetch.mock.calls.length).toEqual(1);
 });
-
