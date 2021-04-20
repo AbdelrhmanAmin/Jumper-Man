@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+import Phaser from 'phaser';
 
 const createCoinAnims = (anims = Phaser.Animations.AnimationManager) => {
   anims.create({
@@ -9,7 +9,7 @@ const createCoinAnims = (anims = Phaser.Animations.AnimationManager) => {
       end: 9,
     }),
     frameRate: 8,
-    repeat: -1
+    repeat: -1,
   });
-}
-export { createCoinAnims }
+};
+export default createCoinAnims;

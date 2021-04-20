@@ -1,9 +1,9 @@
 const scoreSystem = (() => {
-  const key = 'C4WZklBgOz9HR7DdiA4L'
-  const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`
+  const key = 'C4WZklBgOz9HR7DdiA4L';
+  const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`;
   const info = {};
   const postScores = () => {
-    const data = info
+    const data = info;
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -12,21 +12,21 @@ const scoreSystem = (() => {
       },
       body: JSON.stringify(data),
     })
-      .catch(err => {
+      .catch((err) => {
         throw new Error(`Could not reach the API: ${err}`);
-      })
-  }
+      });
+  };
   const namer = (name) => {
-    info.user = name
-  }
+    info.user = name;
+  };
 
   const scorer = (num) => {
-    info.score = num
-  }
+    info.score = num;
+  };
   return {
     postScores,
     namer,
     scorer,
   };
-})
-export default scoreSystem()
+});
+export default scoreSystem();

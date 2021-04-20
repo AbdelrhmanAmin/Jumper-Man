@@ -1,11 +1,11 @@
-import 'phaser';
+import Phaser from 'phaser';
 import BootScene from './scenes/Boot';
 import PreloaderScene from './scenes/Preloader';
 import TitleScene from './scenes/Title';
 import GameScene from './scenes/Game';
 import InputScene from './scenes/Input';
 import ScoreScene from './scenes/ScoreBoard';
-import OptionsScene from './scenes/Options'
+import OptionsScene from './scenes/Options';
 import Model from './Model';
 
 class Game extends Phaser.Game {

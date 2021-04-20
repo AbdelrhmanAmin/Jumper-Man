@@ -1,21 +1,22 @@
-import 'phaser';
-import scoreSystem from '../score/API';
-import Align from "../util/align";
+import Phaser from 'phaser';
+import { Align } from '../util/align';
 import Button from '../Objects/Button';
+
 export default class ScoreScene extends Phaser.Scene {
   constructor() {
     super('Score');
   }
+
   create() {
-    const catbg = this.add.image(0, 0, 'scorebg')
-    Align.scaleToGameW(catbg, 1.5, this)
-    Align.center(catbg, this)
+    const catbg = this.add.image(0, 0, 'scorebg');
+    Align.scaleToGameW(catbg, 1.5, this);
+    Align.center(catbg, this);
     const board = document.getElementById('score');
     board.style.display = 'flex';
-    board.innerHTML = ''
+    board.innerHTML = '';
     fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/C4WZklBgOz9HR7DdiA4L/scores/')
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         const arr = res.result;
         for (let i = 0; i < arr.length; i += 1) {
           for (let j = 0; j < arr.length - 1; j += 1) {
@@ -26,21 +27,21 @@ export default class ScoreScene extends Phaser.Scene {
             }
           }
         }
-        arr.slice(0, 5).forEach((item, i) => {
+        arr.slice(0, 5).forEach((item) => {
           const div = document.createElement('div');
           div.style.cssText = `
           display:flex;
           justify-content: space-between
-          `
+          `;
           const nameDiv = document.createElement('strong');
           const scoreDiv = document.createElement('strong');
           nameDiv.innerHTML = `${item.user} `;
           scoreDiv.innerHTML = `${item.score}`;
           div.appendChild(nameDiv);
           div.appendChild(scoreDiv);
-          board.appendChild(div)
+          board.appendChild(div);
         });
-      })
+      });
     this.menuButton = new Button(this, 400, 500, 'btn-default', 'btn-hover', 'Menu', 'Title');
   }
-};
+}

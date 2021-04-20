@@ -1,13 +1,15 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Button from '../Objects/Button';
+
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super('Title');
   }
+
   create() {
     const board = document.getElementById('score');
     board.style.display = 'none';
-    this.sound.pauseOnBlur = false
+    this.sound.pauseOnBlur = false;
     this.model = this.sys.game.globals.model;
     if (this.model.soundOn === true && this.model.bgMusicPlaying === false) {
       this.bgMusic = this.sound.add('bgMusic', { volume: 0.5, loop: true });

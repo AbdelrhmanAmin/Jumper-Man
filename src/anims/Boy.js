@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+import Phaser from 'phaser';
 
 const createBoyAnims = (anims = Phaser.Animations.AnimationManager) => {
   anims.create({
@@ -14,7 +14,7 @@ const createBoyAnims = (anims = Phaser.Animations.AnimationManager) => {
   anims.create({
     key: 'jump',
     frames: [{ key: 'boy', frame: 0 }],
-    frameRate: 8
+    frameRate: 8,
   });
-}
-export { createBoyAnims }
+};
+export default createBoyAnims;

@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Button from '../Objects/Button';
 
 export default class OptionsScene extends Phaser.Scene {
@@ -15,11 +15,10 @@ export default class OptionsScene extends Phaser.Scene {
 
     this.soundButton.setInteractive();
 
-    this.soundButton.on('pointerdown', function () {
+    this.soundButton.on('pointerdown', () => {
       this.model.soundOn = !this.model.soundOn;
       this.updateAudio();
-    }.bind(this));
-
+    });
 
     this.menuButton = new Button(this, 400, 500, 'btn-default', 'btn-hover', 'Menu', 'Title');
 
@@ -39,4 +38,4 @@ export default class OptionsScene extends Phaser.Scene {
       }
     }
   }
-};
+}
