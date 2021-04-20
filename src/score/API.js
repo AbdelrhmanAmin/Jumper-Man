@@ -11,9 +11,13 @@ const scoreSystem = (() => {
         'content-type': 'application/json; charset=UTF-8',
       },
       body: JSON.stringify(data),
+    }).then((res) => {
+      res.json()
+    }).then((json) => {
+      resolve(json.result);
     })
       .catch((err) => {
-        throw new Error(`Could not reach the API: ${err}`);
+        reject(err);
       });
   };
   const namer = (name) => {
@@ -23,8 +27,18 @@ const scoreSystem = (() => {
   const scorer = (num) => {
     info.score = num;
   };
+  const getScores = () => new Promise((resolve, reject) => {
+    fetch(url)
+      .then(response => response.json()
+        .then((json) => {
+          resolve(json.result);
+        })).catch((e) => {
+          reject(e);
+        });
+  });
   return {
     postScores,
+    getScores,
     namer,
     scorer,
   };
