@@ -25,8 +25,6 @@ The cute boy can jump once and twice only in midst of air defying rules of physi
 
 - JUMP:
   [ Space bar ]
-- JUMP TWICE:
-  [ Space bar ]
 
 ### Prerequisites
 

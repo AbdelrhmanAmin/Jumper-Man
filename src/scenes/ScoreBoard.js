@@ -1,6 +1,7 @@
 import 'phaser';
 import scoreSystem from '../score/API';
 import Align from "../util/align";
+import Button from '../Objects/Button';
 export default class ScoreScene extends Phaser.Scene {
   constructor() {
     super('Score');
