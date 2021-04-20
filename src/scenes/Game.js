@@ -120,9 +120,6 @@ export default class GameScene extends Phaser.Scene {
     this.text1.destroy();
     this.text2.destroy();
     this.text3.destroy();
-    this.player.setGravityY(900);
-    this.addPlatform(this.sys.scale.width, this.sys.scale.width / 2,
-      this.sys.scale.height * gameOptions.platformVerticalLimit[1]);
   }
 
   preload() {
@@ -198,6 +195,9 @@ export default class GameScene extends Phaser.Scene {
     });
     this.addedPlatforms = 0;
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, this.sys.scale.height * 0.7, 'boy');
+    this.player.setGravityY(900);
+    this.addPlatform(this.sys.scale.width, this.sys.scale.width / 2,
+      this.sys.scale.height * gameOptions.platformVerticalLimit[1]);
     this.physics.add.collider(this.player, this.platform, () => { }, null, this);
     this.platformCollider = this.physics.add.collider(this.player, this.platformGroup, function () {
       if (!this.player.anims.isPlaying) {
