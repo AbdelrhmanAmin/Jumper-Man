@@ -1,4 +1,4 @@
-![screenshot](./img.png)
+![screenshot](./img.png) <br>
 🎮️ Name of the game: Jumper
 👥 Stakeholders:
 
