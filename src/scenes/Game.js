@@ -151,7 +151,7 @@ export default class GameScene extends Phaser.Scene {
     this.text4 = this.add.text(200, 400, 'Easter Egg: You can do triple jump!', {
       fontSize: '12px',
       fill: '#FFF',
-    }).setDepth(5)
+    }).setDepth(5);
     this.score = 0;
     this.scoreText = this.add.text(100, 70, 'Score: 0', {
       fontSize: '32px',
