@@ -15,7 +15,7 @@ const gameOptions = {
   playerGravity: 900,
   jumpForce: 400,
   playerStartPosition: 150,
-  jumps: 2,
+  jumps: 3,
   coinPercent: 75,
   spikePercent: 50,
 };
@@ -120,6 +120,7 @@ export default class GameScene extends Phaser.Scene {
     this.text1.destroy();
     this.text2.destroy();
     this.text3.destroy();
+    this.text4.destroy();
   }
 
   preload() {
@@ -147,7 +148,10 @@ export default class GameScene extends Phaser.Scene {
       fill: '#000',
     }).setDepth(5);
     this.space3 = this.add.image(200, 320, 'spacebar').setDepth(5).setScale(0.5);
-
+    this.text4 = this.add.text(200, 400, 'Easter Egg: You can do triple jump!', {
+      fontSize: '12px',
+      fill: '#FFF',
+    }).setDepth(5)
     this.score = 0;
     this.scoreText = this.add.text(100, 70, 'Score: 0', {
       fontSize: '32px',
