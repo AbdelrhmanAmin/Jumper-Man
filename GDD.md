@@ -1,5 +1,5 @@
 ![screenshot](./img.png) <br>
-🎮️ Name of the game: Jumper
+🎮️ Name of the game: Jumper<br>
 👥 Stakeholders:
 
 Dev: @Abdo Amin
