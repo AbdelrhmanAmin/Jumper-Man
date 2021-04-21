@@ -3,21 +3,8 @@ import { Align } from '../util/align';
 import scoreSystem from '../score/API';
 import createBoyAnims from '../anims/Boy';
 import createCoinAnims from '../anims/Coin';
+import gameOptions from '../Objects/gameOptions';
 
-const gameOptions = {
-  platformSpeedRange: [300, 300],
-  spawnRange: [80, 300],
-  platformSizeRange: [120, 300],
-  platformHeightRange: [-5, 5],
-  platformHeighScale: 20,
-  platformVerticalLimit: [0.4, 0.8],
-  playerGravity: 900,
-  jumpForce: 400,
-  playerStartPosition: 150,
-  jumps: 3,
-  coinPercent: 75,
-  spikePercent: 50,
-};
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
