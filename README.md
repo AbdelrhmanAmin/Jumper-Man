@@ -19,7 +19,7 @@
 
 This is a game based on an endless running journey and the hero is a cute alien boy with a mission to collect as much scores as possible to come as number 1 on the leaderboard.
 He must avoid traps and falling or otherwise he meet his doom.
-The cute boy can jump once and twice only in midst of air defying rules of physics and allowing him to avoid falling to the infinity or falling on deathbringer spikes.
+The cute boy can jump once and twice in midst of air defying rules of physics and allowing him to avoid falling to the infinity or falling on deathbringer spikes.
 
 ### How to play
 
