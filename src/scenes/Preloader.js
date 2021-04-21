@@ -10,6 +10,10 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
+    this.add.text(150, 200, 'If the game stuck at loading...Press F5', {
+      fontSize: '24px',
+      fill: '#FFF',
+    }).setDepth(5);
     this.add.image(400, 200, 'bg');
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();

@@ -10,16 +10,20 @@
 - CSS
 - Phaser
 - JavaScript
+- ES6
+- Webpack
+- Jest
 
 ## Live Demo
 
+**If the game take too long to load OR stuck at 91% just press f5** <br>
 [Live Demo Link](https://stoic-bhaskara-99dd55.netlify.app/)
 
-## Game description
+## Game Design Docomment
 
-This is a game based on an endless running journey and the hero is a cute alien boy with a mission to collect as much scores as possible to come as number 1 on the leaderboard.
-He must avoid traps and falling or otherwise he meet his doom.
-The cute boy can jump once and twice in midst of air defying rules of physics and allowing him to avoid falling to the infinity or falling on deathbringer spikes.
+This is a game based on an endless running journey and the hero is a cute alien boy with a mission to collect as many scores as possible to come as number 1 on the leaderboard.
+He must avoid traps and falling or otherwise he meets his doom.
+The cute boy can jump once, twice, and thrice in midst of air defying rules of physics and allowing him to avoid falling to infinity or falling on the Deathbringer spikes.
 
 ### How to play
 
@@ -42,7 +46,7 @@ The cute boy can jump once and twice in midst of air defying rules of physics an
 
 ```
     cd Jumper-Man
-    code .
+    code.
 ```
 
 3- install Packages
@@ -52,7 +56,11 @@ The cute boy can jump once and twice in midst of air defying rules of physics an
 
 ```
 
-3- Right click the dist/index.html file and click on "Open With Live Server"
+3- Run live server
+
+```
+    npm run server
+```
 
 4- Everything should be running by now.
 
@@ -61,7 +69,7 @@ The cute boy can jump once and twice in midst of air defying rules of physics an
 1- Run the next on your terminal in the repository folder
 
 ```
-    npm run webpack
+    npm start
 ```
 
 ### Testing
@@ -86,4 +94,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Credit (Kenney or www.kenney.nl)
+- All respective designers and developers who gave me the chance to use their assets and packages
 - [Microverse](https://www.microverse.org/).

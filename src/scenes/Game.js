@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 import Phaser from 'phaser';
 import { Align } from '../util/align';
 import scoreSystem from '../score/API';
@@ -199,22 +198,23 @@ export default class GameScene extends Phaser.Scene {
     });
     this.addedPlatforms = 0;
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, this.sys.scale.height * 0.7, 'boy');
-    this.player.setGravityY(900);
+    this.player.setGravityY(gameOptions.playerGravity);
     this.addPlatform(this.sys.scale.width, this.sys.scale.width / 2,
       this.sys.scale.height * gameOptions.platformVerticalLimit[1]);
     this.physics.add.collider(this.player, this.platform, () => { }, null, this);
-    this.platformCollider = this.physics.add.collider(this.player, this.platformGroup, function () {
-      if (!this.player.anims.isPlaying) {
-        this.player.anims.play('walk');
-      }
-    }, null, this);
+    this.platformCollider = this.physics.add.collider(this.player, this.platformGroup,
+      function f1() {
+        if (!this.player.anims.isPlaying) {
+          this.player.anims.play('walk');
+        }
+      }, null, this);
     this.physics.add.overlap(this.player, this.spikeGroup, () => {
       this.player.tint = 0xff0000;
       this.player.body.setVelocityY(-200);
       this.player.setImmovable(true);
       this.physics.world.removeCollider(this.platformCollider);
     }, null, this);
-    this.physics.add.overlap(this.player, this.coinGroup, function (player, coin) {
+    this.physics.add.overlap(this.player, this.coinGroup, function f2(player, coin) {
       this.playerJumps = 0;
       this.score += 10;
       this.scoreText.setText(`Score: ${this.score}`);
@@ -240,7 +240,7 @@ export default class GameScene extends Phaser.Scene {
 
     let minDistance = this.sys.scale.width;
     let rightmostPlatformHeight = 0;
-    this.platformGroup.getChildren().forEach(function (platform) {
+    this.platformGroup.getChildren().forEach(function f3(platform) {
       const platformDistance = this.sys.scale.width - platform.x - platform.displayWidth / 2;
       if (platformDistance < minDistance) {
         minDistance = platformDistance;
@@ -252,13 +252,13 @@ export default class GameScene extends Phaser.Scene {
       }
     }, this);
 
-    this.spikeGroup.getChildren().forEach(function (spike) {
+    this.spikeGroup.getChildren().forEach(function f4(spike) {
       if (spike.x < -spike.displayWidth / 2) {
         this.spikeGroup.killAndHide(spike);
         this.spikeGroup.remove(spike);
       }
     }, this);
-    this.coinGroup.getChildren().forEach(function (coin) {
+    this.coinGroup.getChildren().forEach(function f5(coin) {
       if (coin.x < -coin.displayWidth / 2) {
         this.coinGroup.killAndHide(coin);
         this.coinGroup.remove(coin);

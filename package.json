@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "jest",
-    "webpack": "webpack --watch",
+    "server": "webpack serve",
+    "start": "webpack --watch",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
@@ -45,7 +46,8 @@
     "jest": "^26.6.3",
     "jest-canvas-mock": "^2.3.1",
     "webpack": "^5.33.2",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "@babel/core": "^7.13.16",
@@ -55,7 +57,6 @@
     "jest-expect-subclass": "^1.0.1",
     "jest-fetch-mock": "^3.0.3",
     "phaser": "^3.54.0",
-    "regenerator-runtime": "^0.13.7",
-    "webpack-dev-server": "^3.11.2"
+    "regenerator-runtime": "^0.13.7"
   }
 }
