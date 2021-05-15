@@ -19,7 +19,7 @@
 **If the game take too long to load OR stuck at 91% just press f5** <br>
 [Live Demo Link](https://stoic-bhaskara-99dd55.netlify.app/)
 
-## Game Design Docomment
+## Game Design Document
 
 This is a game based on an endless running journey and the hero is a cute alien boy with a mission to collect as many scores as possible to come as number 1 on the leaderboard.
 He must avoid traps and falling or otherwise he meets his doom.
